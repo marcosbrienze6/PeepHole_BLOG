@@ -1,39 +1,32 @@
-<h1 align="left">Hey 👋 What's up?</h1>
+# Cycle Front
 
-###
+![React](https://img.icons8.com/color/48/000000/react-native.png)
 
-<p align="left">My name is ... and I'm a ..., from ....</p>
+Descrição breve do projeto.
 
-###
+## Pré-requisitos
 
-<h2 align="left">About me</h2>
+Certifique-se de ter os seguintes softwares instalados:
 
-###
+- Git
+- Node.js e npm (o npm vem junto com o Node.js)
+- curl
+- software-properties-common
 
-<p align="left">✨ Creating bugs since ...<br>📚 I'm currently learning ...<br>🎯 Goals: ...<br>🎲 Fun fact: ...</p>
+## Instruções de Instalação
 
-###
+### Clonando, instalando e rodando.
 
-<h2 align="left">I code with</h2>
+`git clone https://github.com/Felipe1208/cycle-front.git`
 
-###
+`cd cycle-front`
 
-<div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" alt="javascript logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="40" alt="typescript logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" alt="react logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" height="40" alt="nextjs logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/storybook/storybook-original.svg" height="40" alt="storybook logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="40" alt="nodejs logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg" height="40" alt="nestjs logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" height="40" alt="jest logo"  />
-</div>
+`$ sudo apt install curl software-properties-common`
 
-###
+`$ curl -fsSL https://fnm.vercel.app/install | bash`
+
+`$ npm install vite --save-dev`
+
+`$ npm install vite --save-dev`
+
+`$ npm run dev`
