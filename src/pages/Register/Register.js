@@ -1,14 +1,19 @@
 //CSS
 import styles from "./Register.module.css";
-
+//Router
 import { Link } from "react-router-dom";
-
+//Hooks
 import { useEffect, useState } from "react";
 import { useAuthentication } from "../../hooks/useAuthentication";
+
+//Components
+import AddUserPhoto from "../../components/AddUserPhoto";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [photoURLabel, setPhotoURLLabel] = useState(true);
+
   const [displayName, setDisplayName] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
@@ -25,6 +30,7 @@ const Register = () => {
       displayName,
       email,
       password,
+      // photoURL,
     };
 
     if (password !== confirmpassword) {
@@ -53,6 +59,11 @@ const Register = () => {
       setError(authError);
     }
   }, [authError]);
+
+  const closeLabel = (e) => {
+    e.preventDefault();
+    setPhotoURLLabel(false);
+  };
 
   return (
     <div className={styles.register}>
@@ -101,6 +112,19 @@ const Register = () => {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </label>
+
+        <label>
+          {photoURLabel && (
+            <>
+              Quer adicionar uma foto?
+              <input type="file" placeholder="Confirme sua senha" />
+              <button className={styles.late_btn} onClick={closeLabel}>
+                Adicionar depois
+              </button>
+            </>
+          )}
+        </label>
+
         <p>
           Já tem uma conta? <Link to={"/login"}>Entrar</Link>
         </p>
@@ -112,7 +136,7 @@ const Register = () => {
         )}
 
         {error && <p className="error">{error}</p>}
-        {check && <p className="check">{check}</p>}
+        {/* {check && <p className="check">{check}</p>} */}
       </form>
     </div>
   );
