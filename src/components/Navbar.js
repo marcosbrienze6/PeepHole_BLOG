@@ -54,10 +54,10 @@ const Navbar = () => {
         {user && (
           <>
             <li>
-              <NavLink to={"/posts/create"}>Criar post</NavLink>
+              <NavLink to={"/posts/create"}>Postar</NavLink>
             </li>
             <li>
-              <NavLink to={"/dashboard"}>Dashboard</NavLink>
+              <NavLink to={"/dashboard"}>Meus posts</NavLink>
             </li>
           </>
         )}

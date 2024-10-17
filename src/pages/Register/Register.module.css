@@ -5,3 +5,9 @@
 .register p {
   color: #aaa;
 }
+
+.late_btn {
+  background-color: #ccc;
+  padding: 5px;
+  width: 150px;
+}
