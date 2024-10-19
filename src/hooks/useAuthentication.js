@@ -3,6 +3,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
+  updateEmail,
+  sendEmailVerification,
   signOut,
 } from "firebase/auth";
 
@@ -41,10 +43,6 @@ export const useAuthentication = () => {
 
       const user = response.user;
 
-      await updateProfile(user, {
-        displayName: data.displayName,
-      });
-
       return user;
     } catch (error) {
       console.log(error.message);
@@ -66,6 +64,41 @@ export const useAuthentication = () => {
     }
   };
 
+  //update user function
+
+  const updateUser = async (data) => {
+    checkIfIsCancelled();
+
+    setLoading(true);
+    setError(null);
+
+    if (!auth.currentUser.emailVerified) {
+      await sendEmailVerification(auth.currentUser);
+      setError("Por favor verifique o email antes de altera-lo");
+      setLoading(false);
+      return;
+    }
+
+    try {
+      //modifying username
+      await updateProfile(auth.currentUser, {
+        displayName: data.displayName,
+      });
+
+      //modifying email
+
+      if (auth.currentUser.email !== data.email) {
+        await updateEmail(auth.currentUser, data.email);
+      }
+
+      return auth.currentUser;
+    } catch (error) {
+      console.log(error.message);
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
   //function to sign up
 
   const loginUser = async (data) => {
@@ -122,5 +155,6 @@ export const useAuthentication = () => {
     loading,
     logout,
     loginUser,
+    updateUser,
   };
 };

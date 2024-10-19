@@ -3,6 +3,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Lato";
+  overflow-x: hidden;
 }
 
 input::placeholder,
@@ -121,4 +122,8 @@ button[disabled] {
   border: 1px solid #71e071;
   padding: 5px;
   border-radius: 5px;
+}
+
+.inputpai {
+  font-size: 18px;
 }
